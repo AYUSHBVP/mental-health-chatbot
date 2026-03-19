@@ -1,6 +1,14 @@
-# 🧠 Aria — AI Mental Health Chatbot (Groq Free API)
+# 🧠 Aria — AI Mental Health Chatbot
 
-A full-stack mental health support chatbot built with React, FastAPI, and the **Groq API (FREE)**.
+🌐 **Live Demo:** [mental-health-chatbot-amber.vercel.app](https://mental-health-chatbot-amber.vercel.app)
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://mental-health-chatbot-amber.vercel.app)
+[![Backend](https://img.shields.io/badge/Backend-Render-blue)](https://mental-health-chatbot-d7in.onrender.com)
+[![Made with React](https://img.shields.io/badge/Frontend-React-61dafb)](https://reactjs.org)
+[![Made with FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688)](https://fastapi.tiangolo.com)
+[![Powered by Groq](https://img.shields.io/badge/AI-Groq%20LLaMA3-orange)](https://groq.com)
+
+A full-stack AI mental health support chatbot built with React, FastAPI, and LLaMA 3 via Groq API (free).
 
 ## Features
 - 💬 Empathetic AI chat powered by LLaMA 3 (via Groq — FREE)
@@ -9,98 +17,30 @@ A full-stack mental health support chatbot built with React, FastAPI, and the **
 - 🆘 Crisis detection + Indian helpline resources
 - ⚡ Quick-start conversation prompts
 
----
+## Tech Stack
+- **Frontend:** React + Vite
+- **Backend:** FastAPI (Python)
+- **AI Model:** LLaMA 3 via Groq API
+- **NLP:** TextBlob
+- **Deployment:** Vercel (frontend) + Render (backend)
 
-## 🔑 Get Your FREE Groq API Key
+## Run Locally
 
-1. Go to [console.groq.com](https://console.groq.com)
-2. Sign up for a free account (no credit card needed)
-3. Click **API Keys** → **Create API Key**
-4. Copy the key — it starts with `gsk_...`
-
-Groq free tier includes **generous daily limits** — more than enough for a personal chatbot.
-
----
-
-## ▶️ How to Run
-
-### Prerequisites
-- Python 3.9+
-- Node.js 18+
-- A free Groq API key (see above)
-
----
-
-### 1. Backend (FastAPI)
-
+### Backend
 ```bash
 cd backend
-
-# Copy and fill in your API key
 cp .env.example .env
-# Edit .env and set: GROQ_API_KEY=gsk_...
-
-# Install dependencies
+# Add your GROQ_API_KEY in .env
 pip install -r requirements.txt
-
-# Download TextBlob corpora (first time only)
-python -m textblob.download_corpora
-
-# Start the server
 python -m uvicorn main:app --reload --port 8000
 ```
 
-Backend will be running at: http://localhost:8000
-
----
-
-### 2. Frontend (React + Vite)
-
-Open a new terminal:
-
+### Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-
-Frontend will be running at: http://localhost:5173
-
----
-
-### 3. (Optional) Docker Compose
-
-```bash
-cp backend/.env.example backend/.env
-# Edit backend/.env → add your GROQ_API_KEY
-
-docker-compose up --build
-```
-
----
-
-## Project Structure
-
-```
-mental-health-chatbot/
-├── backend/
-│   ├── main.py                  # FastAPI entry point
-│   ├── routes/chat.py           # /api/chat endpoint
-│   ├── services/
-│   │   ├── ai_service.py        # Groq (LLaMA 3) integration
-│   │   └── nlp_service.py       # Sentiment + crisis detection
-│   ├── models/schemas.py        # Pydantic models
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx              # Main chat UI
-│   │   └── main.jsx
-│   ├── index.html
-│   └── package.json
-└── docker-compose.yml
-```
-
----
 
 ## Crisis Resources (India)
 - iCall: 9152987821
