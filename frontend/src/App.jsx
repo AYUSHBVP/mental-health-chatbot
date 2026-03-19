@@ -131,8 +131,7 @@ export default function App() {
     const history = newMessages.slice(1, -1).map(m => ({ role: m.role, content: m.content }));
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "";
-      const res = await fetch(`${apiUrl}/api/chat`, {
+      const res = await fetch("https://mental-health-chatbot-d7in.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userText, history, mood }),
