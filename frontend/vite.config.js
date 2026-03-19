@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:8000'
+      '/api': 'https://mental-health-chatbot-d7in.onrender.com'
     }
   }
 })
